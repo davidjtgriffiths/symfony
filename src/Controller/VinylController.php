@@ -2,14 +2,18 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class VinylController {
+class VinylController extends AbstractController 
+{
     
     #[Route('/')]
-    public function index() {
+    public function homepage() {
 
-        dd('hello');
+        return $this->render('vinyl/homepage.html.twig', [
+            'title' => 'Dave',
+        ]);
     }
 
     #[Route('/browse/{slug}')]
